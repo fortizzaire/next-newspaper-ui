@@ -1,0 +1,148 @@
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { abril } from "@/app/fonts";
+import { delay, motion } from "framer-motion";
+
+const sectionTitle = {
+  hidden: { opacity: 0, y: 20, letterSpacing: "0.15em" },
+  show: {
+    opacity: 1,
+    y: 0,
+    letterSpacing: "0.02em",
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const ruleLine = {
+  hidden: { scaleX: 0 },
+  show: {
+    scaleX: 1,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const container = {
+  hidden: { opacity: 0, y: 30 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
+};
+
+const columnStagger = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+      staggerChildren: 0.25,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const CVItem = ({ title, org, year, desc }) => (
+  <motion.div variants={item} className="space-y-2">
+    <div className="flex justify-between items-start">
+      <h4 className="font-serif font-bold text-lg leading-tight cutout-headline">{title}</h4>
+      <span className="italic text-sm text-gray-700">{year}</span>
+    </div>
+
+    <p className="italic text-sm text-gray-700">{org}</p>
+
+    <p className="text-sm text-justify leading-relaxed">{desc}</p>
+
+    {/* <div className="border-b border-gray-300 pt-2"></div> */}
+  </motion.div>
+);
+
+export default function CVSection() {
+  return (
+    <motion.section variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className="max-w-5xl mx-auto px-6 pt-20 md:pt-15">
+      <motion.h2 variants={sectionTitle} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} className={`${abril.className} bg-[#f5edc9] text-center text-4xl md:text-5xl tracking-tight p-7 mb-3`}>
+        CV HEADLINE
+      </motion.h2>
+
+      {/* Bottom Border */}
+      <motion.div variants={ruleLine} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} className="border-t border-gray-400 origin-left" />
+
+      {/* CV Grid */}
+      <motion.div variants={columnStagger} className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-5">
+        {/* WORK COLUMN */}
+        <motion.div variants={container} className="space-y-10">
+          {/* Header */}
+          <motion.h3 variants={container} className={`${abril.className} text-center text-3xl md:text-4xl mb-4 bg-[#D9D9D9] py-4`}>
+            Work
+          </motion.h3>
+
+          <CVItem
+            title="Web Project Management"
+            org="Dinas Lingkungan Hidup — Indonesia"
+            year="2024–2025"
+            desc="In associated with the Government Environmental Office in Tasikmalaya City, I collaborated with the crew to build a Web Based Green Spaces Management System, namely Siska Hayati, to map trees across town. This project aims to enhance data accuracy and provide the tree informations for wide audiences. Over 6.753 trees were recorded, spread across over 39 green spaces in Tasikmalaya."
+          />
+
+          <CVItem
+            title="DevOps Intern"
+            org="Bank BJB — Indonesia"
+            year="2024–2025"
+            desc="Initiated a sub-project of Continuous Integration using Jenkins Pipeline from the Gitlab Repositories to the On-Premise Services provided  by IBM App Connect Enterprise. The project was aimed for improving the server-checking by the pipeline to reduce failure during the  Continuous Deployment process. By implementing the time interval multi-server checking method in the pipeline, the process was  improved in error and time efficiency by 25%."
+          />
+        </motion.div>
+
+        {/* EXPERIENCE COLUMN */}
+        <motion.div variants={container} className="space-y-10">
+          <motion.h3 variants={container} className={`${abril.className} text-center text-3xl md:text-4xl mb-4 bg-[#D9D9D9] py-4`}>
+            Experience
+          </motion.h3>
+
+          <CVItem
+            title="Google Project Management Certificate"
+            org="Coursera"
+            year="2025"
+            desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta doloremque facilis at necessitatibus eum fugiat, dolorum sint architecto, enim, illo saepe fugit et cumque vitae eveniet deleniti ab ipsum! Explicabo?"
+          />
+
+          <CVItem
+            title="Organization Management"
+            org="Universitas Islam Indonesia"
+            year="2023–2024"
+            desc="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio perspiciatis molestiae quidem dolorem! Porro, rerum qui quaerat quam nostrum in."
+          />
+        </motion.div>
+      </motion.div>
+
+      {/* Divider */}
+      <div className="mt-20">
+        <div className="border-t border-gray-400" />
+
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-between mt-3 gap-3">
+          {/* Bars */}
+          <div className="flex gap-[1px] w-full md:w-auto">
+            <div className="h-6 flex-1 md:w-40 bg-[#EB6161]" />
+            <div className="h-6 flex-1 md:w-40 bg-[#EF7D7D]" />
+            <div className="h-6 flex-1 md:w-40 bg-[#F39F9F]" />
+          </div>
+
+          {/* Tagline */}
+          <p className={`${abril.className} italic text-center md:text-right text-sm md:text-base w-full md:w-auto`}>We work in the dark to serve the light.</p>
+        </div>
+      </div>
+    </motion.section>
+  );
+}

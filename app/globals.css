@@ -1,26 +1,125 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #faf7f2;
   --foreground: #171717;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+.paper-grain::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background-image: url("/noise.png");
+  opacity: 0.18; /* tweak between 0.08 - 0.25 */
+  mix-blend-mode: multiply;
+  z-index: 999;
+}
+
+.ink-press {
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.6), /* subtle bleed */ 0.5px 0.5px 0 rgba(0, 0, 0, 0.4); /* impression depth */
+  filter: contrast(1.1) brightness(0.95);
+}
+
+/* --- Cut-Out Headline Hover Effect (NYT Style) --- */
+
+/* Headline wrapper */
+.cutout-headline {
+  position: relative;
+  display: inline-flex;
+  gap: 0px;
+  transition: all 0.2s ease-out;
+}
+
+/* Each letter */
+.cutout-headline span {
+  display: inline-block;
+  transition: transform 0.18s ease-out, text-shadow 0.18s ease-out;
+}
+
+/* Only move the character you hover */
+.cutout-headline span:hover {
+  transform: translateY(-6px);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+/* Grain overlay on group hover */
+.cutout-headline::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/grain.jpg");
+  background-size: cover;
+  mix-blend-mode: multiply;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease-out;
+}
+
+/* Grain fades in when hovering ANY letter */
+.cutout-headline:hover::after {
+  opacity: 0.24;
+}
+
+/* Newspaper style float wrap ONLY on mobile */
+
+@media (max-width: 767px) {
+  .float-image-mobile img {
+    float: left;
+    width: 45%;
+    margin-right: 12px;
+    margin-bottom: 6px;
+    border-radius: 2px;
+  }
+}
+
+/* Drop cap style */
+.dropcap {
+  font-size: 3rem;
+  line-height: 0.8;
+  float: left;
+  padding-right: 6px;
+  padding-top: 4px;
+  font-family: "Playfair Display", serif; /* or Abril */
+  font-weight: 900;
+}
+
+/* Subtle retro newsprint color style */
+.newsprint-soft {
+  filter: contrast(0.92) brightness(1.05) saturate(0.85) sepia(0.08);
+  opacity: 0.97;
+  transition: all 0.35s ease;
+  transform: scale(1.01);
+}
+
+/* Gentle grain layer */
+.newsprint-soft::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/grain.jpg");
+  opacity: 0.15;
+  mix-blend-mode: multiply;
+  pointer-events: none;
 }
