@@ -56,7 +56,14 @@ const item = {
   },
 };
 
-const CVItem = ({ title, org, year, desc }) => (
+interface CVItemProps {
+  title: string;
+  org: string;
+  year: string;
+  desc: string;
+}
+
+const CVItem = ({ title, org, year, desc }: CVItemProps) => (
   <motion.div variants={item} className="space-y-2">
     <div className="flex justify-between items-start">
       <h4 className="font-serif font-bold text-lg leading-tight cutout-headline">{title}</h4>
