@@ -3,8 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { abril } from "@/app/fonts";
 import { delay, motion } from "framer-motion";
+import { Variants } from "framer-motion";
 
-const sectionTitle = {
+const sectionTitle: Variants = {
   hidden: { opacity: 0, y: 20, letterSpacing: "0.15em" },
   show: {
     opacity: 1,
@@ -14,7 +15,7 @@ const sectionTitle = {
   },
 };
 
-const ruleLine = {
+const ruleLine: Variants = {
   hidden: { scaleX: 0 },
   show: {
     scaleX: 1,
@@ -22,7 +23,7 @@ const ruleLine = {
   },
 };
 
-const container = {
+const container: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
@@ -31,7 +32,7 @@ const container = {
   },
 };
 
-const columnStagger = {
+const columnStagger: Variants = {
   hidden: { opacity: 0, y: 40 },
   show: {
     opacity: 1,
@@ -44,7 +45,7 @@ const columnStagger = {
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,

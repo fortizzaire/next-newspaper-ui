@@ -3,8 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { abril } from "@/app/fonts";
 import { delay, motion } from "framer-motion";
+import { Variants } from "framer-motion";
 
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -15,7 +16,7 @@ const container = {
   },
 };
 
-const card = {
+const card: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
@@ -24,12 +25,12 @@ const card = {
   },
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 10 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const sectionTitle = {
+const sectionTitle: Variants = {
   hidden: { opacity: 0, y: 20, letterSpacing: "0.15em" },
   show: {
     opacity: 1,
@@ -39,7 +40,7 @@ const sectionTitle = {
   },
 };
 
-const ruleLine = {
+const ruleLine: Variants = {
   hidden: { scaleX: 0 },
   show: {
     scaleX: 1,

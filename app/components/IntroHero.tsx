@@ -2,9 +2,10 @@
 import Image from "next/image";
 import { abril } from "@/app/fonts";
 import { delay, motion } from "framer-motion";
+import { Variants } from "framer-motion";
 
 // Animation Variants for Hero Section
-const container = {
+const container: Variants = {
   hidden: { opacity: 0, y: 0 },
   show: {
     opacity: 1,
@@ -17,12 +18,12 @@ const container = {
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 15 },
   show: { opacity: 1, y: 0 },
 };
 
-const photo = {
+const photo: Variants = {
   hidden: { opacity: 0, scale: 1.0, y: 100 },
   show: {
     opacity: 1,
@@ -33,7 +34,7 @@ const photo = {
 };
 
 // Animation Variants for Divider Section
-const dividerContainer = {
+const dividerContainer: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -41,7 +42,7 @@ const dividerContainer = {
   },
 };
 
-const dividerLine = {
+const dividerLine: Variants = {
   hidden: { scaleX: 0 },
   show: {
     scaleX: 1,
@@ -49,7 +50,7 @@ const dividerLine = {
   },
 };
 
-const barItem = {
+const barItem: Variants = {
   hidden: { x: -20, opacity: 0 },
   show: {
     x: 0,
@@ -58,7 +59,7 @@ const barItem = {
   },
 };
 
-const tagline = {
+const tagline: Variants = {
   hidden: { opacity: 0, y: 10 },
   show: {
     opacity: 1,
