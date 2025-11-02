@@ -81,7 +81,7 @@ const projects = [
     title: "Designer Guide",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor...",
     cat: "Case Study",
-    img: "/images/1.jpg",
+    img: "/images/ohto.jpg",
     href: "/projects/project-4",
   },
 ];
@@ -89,7 +89,7 @@ const projects = [
 export default function ProjectsSection() {
   return (
     <section className="max-w-5xl mx-auto px-6 pt-20 md:pt-15">
-      <motion.h2 variants={sectionTitle} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} className={`${abril.className} bg-[#f5edc9] text-center text-4xl md:text-5xl tracking-tight p-7 mb-3`}>
+      <motion.h2 variants={sectionTitle} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} className={`${abril.className} bg-[#efe4c8] text-center text-4xl md:text-5xl tracking-tight p-7 mb-3`}>
         PROJECT HEADLINE
       </motion.h2>
 

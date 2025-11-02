@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={playfair.className}>
-      <body className="bg-[#faf7f2] text-gray-900 paper-grain">{children}</body>
+      <body className="paper-grain">{children}</body>
     </html>
   );
 }

@@ -82,7 +82,7 @@ const CVItem = ({ title, org, year, desc }: CVItemProps) => (
 export default function CVSection() {
   return (
     <motion.section variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className="max-w-5xl mx-auto px-6 pt-20 md:pt-15">
-      <motion.h2 variants={sectionTitle} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} className={`${abril.className} bg-[#f5edc9] text-center text-4xl md:text-5xl tracking-tight p-7 mb-3`}>
+      <motion.h2 variants={sectionTitle} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} className={`${abril.className} bg-[#efe4c8] text-center text-4xl md:text-5xl tracking-tight p-7 mb-3`}>
         CV HEADLINE
       </motion.h2>
 
@@ -94,7 +94,7 @@ export default function CVSection() {
         {/* WORK COLUMN */}
         <motion.div variants={container} className="space-y-10">
           {/* Header */}
-          <motion.h3 variants={container} className={`${abril.className} text-center text-3xl md:text-4xl mb-4 bg-[#D9D9D9] py-4`}>
+          <motion.h3 variants={container} className={`${abril.className} text-center text-3xl md:text-4xl mb-4 bg-[#e1ddd3] py-4`}>
             Work
           </motion.h3>
 
@@ -115,7 +115,7 @@ export default function CVSection() {
 
         {/* EXPERIENCE COLUMN */}
         <motion.div variants={container} className="space-y-10">
-          <motion.h3 variants={container} className={`${abril.className} text-center text-3xl md:text-4xl mb-4 bg-[#D9D9D9] py-4`}>
+          <motion.h3 variants={container} className={`${abril.className} text-center text-3xl md:text-4xl mb-4 bg-[#e1ddd3] py-4`}>
             Experience
           </motion.h3>
 

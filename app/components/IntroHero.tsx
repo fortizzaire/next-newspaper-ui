@@ -3,6 +3,7 @@ import Image from "next/image";
 import { abril } from "@/app/fonts";
 import { delay, motion } from "framer-motion";
 import { Variants } from "framer-motion";
+import { useState } from "react";
 
 // Animation Variants for Hero Section
 const container: Variants = {
@@ -70,9 +71,10 @@ const tagline: Variants = {
 
 export default function IntroSection() {
   const headline = "FARKHAN NINDYARAYHAN DHANENDRA";
+  const [active, setActive] = useState(false);
 
   return (
-    <section className="max-w-5xl mx-auto px-6 pt-16 md:pt-24">
+    <section className="max-w-5xl mx-auto px-6 pt-24">
       {/* Full Width Title */}
 
       <motion.h2 className="ink-press text-center italic text-3xl md:text-5xl tracking-tight py-7" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.2 }}>
@@ -99,27 +101,26 @@ export default function IntroSection() {
 
       <motion.div variants={container} initial="hidden" animate="show" className="md:flex flex-col md:flex-row gap-8 md:gap-10 items-start">
         {/* Photo */}
-        <motion.div variants={photo} className="relative w-full md:w-1/3 float-image-mobile group">
+        <motion.div variants={photo} className="relative w-full md:w-1/3 float-image-mobile group cursor-pointer" onClick={() => setActive(!active)}>
           <Image src="/soqo.png" alt="Portrait" width={400} height={500} className="object-cover w-full h-auto" loading="eager" />
           {/* Hover caption */}
           <div
-            className="
-              absolute inset-0 
-              bg-black/0 group-hover:bg-black/35 
-              transition-all duration-500 ease-out
-            "
+            className={`
+          absolute inset-0 transition-all duration-500 ease-out 
+          ${active ? "bg-black/35" : "bg-black/0 group-hover:bg-black/35"}
+        `}
           />
 
+          {/* Quote */}
           <div
-            className="
-              absolute bottom-3 left-3 right-3
-              opacity-0 group-hover:opacity-100
-              transition-all duration-500 ease-out
-              text-xs md:text-sm leading-snug
-              font-serif italic text-[#f4f1e2]
-            "
+            className={`
+          absolute bottom-3 left-3 right-3
+          transition-all duration-500 ease-out
+          text-xs md:text-sm leading-snug font-serif italic text-[#f4f1e2]
+          ${active ? "opacity-100" : "opacity-0 group-hover:opacity-100"}
+        `}
           >
-            “Wanting to have Alan Ritchson physique, and classy af like Steve Jobs.”
+            “Wanting to have Alan Ritchson physique, but also classy af like Steve Jobs.”
           </div>
         </motion.div>
 

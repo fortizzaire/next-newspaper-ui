@@ -3,11 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { abril } from "@/app/fonts"; // your Abril font import
+import { abril } from "@/app/fonts";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   return (
-    <motion.footer initial={{ y: 60, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.8, ease: "easeOut" }} viewport={{ once: true }} className="relative bg-[#faf7f2] mt-15 pt-5 pb-12 w-full overflow-hidden">
+    <motion.footer initial={{ y: 60, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.8, ease: "easeOut" }} viewport={{ once: true }} className="relative bg-[#f4efe2] mt-15 pt-5 pb-12 w-full overflow-hidden">
       <div className="max-w-5xl mx-auto px-6">
         {/* Top text */}
         <p className="font-bold leading-relaxed mb-3">
@@ -28,8 +29,8 @@ export default function Footer() {
             { name: "Instagram", url: "https://www.instagram.com/farrkhnd/" },
             { name: "Spotify", url: "https://open.spotify.com/user/justforhappygaming?si=84ad734ff65b4fd1" },
           ].map((s, i) => (
-            <Link key={i} href={s.url} className="hover:underline flex items-center gap-1 font-semibold">
-              {s.name} ↗
+            <Link key={i} href={s.url} className="hover:underline inline-flex items-center gap-1 font-semibold">
+              {s.name} <ArrowUpRight size={12} strokeWidth={1.6} className="translate-y-[1px]" />
             </Link>
           ))}
         </div>
