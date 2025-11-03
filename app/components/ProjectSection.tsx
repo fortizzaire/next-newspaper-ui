@@ -53,7 +53,7 @@ const projects = [
     title: "Projek Paling Spesial",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint pariatur laudantium similique nobis magnam non maiores ab voluptas est adipisci voluptatibus nam eum corporis temporibus modi natus quaerat molestias quos nostrum aliquid a quia, odit enim. Corporis quidem soluta earum est, animi delectus eveniet, voluptate architecto id dicta facilis obcaecati. Facilis numquam tempore animi iure nulla laudantium modi pariatur architecto.",
     cat: "Fullstack Web",
-    img: "/images/Siska.jpg",
+    img: "/images/nytimes.jpg",
     href: "/projects/project-1",
   },
   {

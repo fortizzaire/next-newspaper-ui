@@ -25,13 +25,8 @@ export default function Header() {
         <div className="md:flex items-center text-center justify-between py-[6px] md:py-1 px-6 text-xs md:text-sm font-semibold">
           <span>Information Technology, Web Developer, Designer</span>
 
-          <div className="hidden md:flex items-center gap-4">
-            <a href="https://www.linkedin.com/in/nindyarayhan/" className="hover:underline inline-flex items-center gap-1">
-              LinkedIn <ArrowUpRight size={12} strokeWidth={1.6} className="translate-y-[1px]" />
-            </a>
-            <a href="https://github.com/fortizzaire" className="hover:underline inline-flex items-center gap-1">
-              Github <ArrowUpRight size={12} strokeWidth={1.6} className="translate-y-[1px]" />
-            </a>
+          <div className="hidden md:flex items-center">
+            <span>Vol. I • Issue 01</span>
           </div>
         </div>
 
