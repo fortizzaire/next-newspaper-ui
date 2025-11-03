@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="max-w-5xl mx-auto px-6">
         {/* Top text */}
         <p className="font-bold leading-relaxed mb-3">
-          If you are interested in collaborate with me, hit me up at{" "}
+          If you are interested in collaborating with me, hit me up at{" "}
           <a href="mailto:nindyarayhan@gmail.com" className="font-bold underline hover:opacity-70">
             nindyarayhan@gmail.com
           </a>
