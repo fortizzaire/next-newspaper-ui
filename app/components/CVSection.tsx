@@ -66,8 +66,8 @@ interface CVItemProps {
 
 const CVItem = ({ title, org, year, desc }: CVItemProps) => (
   <motion.div variants={item} className="space-y-2">
-    <div className="flex justify-between items-start">
-      <h4 className="font-serif font-bold text-lg leading-tight cutout-headline py-1">{title}</h4>
+    <div className="flex justify-between items-start py-1">
+      <h4 className="font-serif font-bold text-lg leading-tight cutout-headline">{title}</h4>
       <span className="italic text-sm text-gray-700">{year}</span>
     </div>
 
