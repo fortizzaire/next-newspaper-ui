@@ -104,18 +104,18 @@ export default function ProjectsSection() {
         {projects.map((p, i) => (
           <Link key={i} href={p.href} className="block group">
             {/* Card */}
-            <motion.div variants={card} className="flex flex-col space-y-2 pb-2">
-              <div className="w-full h-48 bg-gray-200 overflow-hidden">
-                <Image src={p.img} alt={p.title} width={500} height={300} className="newsprint-soft object-cover w-full h-full group-hover:scale-[1.02] transition-all duration-300" />
+            <motion.div variants={card} className="flex flex-col space-y-3 pb-2">
+              <div className="w-full h-40 md:h-44 bg-gray-200 overflow-hidden border border-[#b8b1a4] shadow-[0_0_1px_0_rgba(0,0,0,0.25)]">
+                <Image src={p.img} alt={p.title} width={500} height={300} className="newsprint-soft object-cover w-full h-full p-[1px] group-hover:scale-[1.01] transition-all duration-300" />
               </div>
 
-              <motion.div variants={fadeUp} className="relative flex items-center gap-3 text-[11px] tracking-[0.18em] uppercase text-gray-700 m-2 font-serif">
+              <motion.div variants={fadeUp} className="relative flex items-center gap-3 text-[11px] tracking-[0.18em] uppercase text-gray-700 font-serif mt-2 mb-1">
                 <div className="h-[1px] flex-1 bg-gray-400 opacity-60" />
                 <span className="px-2 italic font-normal">Featured Project • {p.cat}</span>
                 <div className="h-[1px] flex-1 bg-gray-400 opacity-60" />
               </motion.div>
 
-              <motion.h3 variants={fadeUp} className="font-serif font-bold text-xl leading-tight cutout-headline py-1">
+              <motion.h3 variants={fadeUp} className="font-serif font-bold text-[1.22rem] leading-[1.15] cutout-headline pt-3 pb-2">
                 {p.title.split("").map((char, i) => (
                   <span key={i} style={{ display: "inline-block" }} className="char">
                     {char === " " ? "\u00A0" : char}

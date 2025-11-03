@@ -101,26 +101,32 @@ export default function IntroSection() {
 
       <motion.div variants={container} initial="hidden" animate="show" className="md:flex flex-col md:flex-row gap-8 md:gap-10 items-start">
         {/* Photo */}
-        <motion.div variants={photo} className="relative w-full md:w-1/3 float-image-mobile group cursor-pointer" onClick={() => setActive(!active)}>
-          <Image src="/soqo.png" alt="Portrait" width={400} height={500} className="object-cover w-full h-auto" loading="eager" />
-          {/* Hover caption */}
-          <div
-            className={`
-          absolute inset-0 transition-all duration-500 ease-out 
+        <motion.div variants={photo} className="w-full md:w-1/3 relative group cursor-pointer" onClick={() => setActive(!active)}>
+          <div className="float-container">
+            {/* Actual float element */}
+            <div className="float-image-mobile relative overflow-hidden">
+              <Image src="/soqo.png" alt="Portrait" width={400} height={500} className="object-cover w-full h-auto" loading="eager" />
+
+              {/* Dark overlay */}
+              <div
+                className={`
+          absolute inset-0 transition-all duration-500 ease-out z-10
           ${active ? "bg-black/35" : "bg-black/0 group-hover:bg-black/35"}
         `}
-          />
+              />
 
-          {/* Quote */}
-          <div
-            className={`
-          absolute bottom-3 left-3 right-3
+              {/* Quote */}
+              <div
+                className={`
+          absolute bottom-3 left-3 right-3 z-20
           transition-all duration-500 ease-out
           text-xs md:text-sm leading-snug font-serif italic text-[#f4f1e2]
           ${active ? "opacity-100" : "opacity-0 group-hover:opacity-100"}
         `}
-          >
-            “Wanting to have Alan Ritchson physique, but also classy af like Steve Jobs.”
+              >
+                “Wanting to have Alan Ritchson physique, and as wisdom as Naval Ravikant.”
+              </div>
+            </div>
           </div>
         </motion.div>
 

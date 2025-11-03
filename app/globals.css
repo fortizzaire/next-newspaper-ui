@@ -84,13 +84,23 @@ body {
 
 /* Newspaper style float wrap ONLY on mobile */
 
-@media (max-width: 767px) {
-  .float-image-mobile img {
+.float-container {
+  width: 100%;
+}
+
+.float-image-mobile {
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .float-image-mobile {
     float: left;
-    width: 45%;
-    margin-right: 12px;
+    width: 50%;
+    margin-right: 14px;
     margin-bottom: 6px;
-    border-radius: 2px;
+    shape-outside: inset(0);
+    shape-margin: 8px;
   }
 }
 
