@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { abril } from "@/app/fonts";
-import { ArrowUpRight } from "lucide-react";
 
 export default function Header() {
   return (
