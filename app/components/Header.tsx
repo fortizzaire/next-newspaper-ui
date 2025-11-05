@@ -25,7 +25,7 @@ export default function Header() {
           <span>Information Technology, Web Developer, Designer</span>
 
           <div className="hidden md:flex items-center">
-            <span>Vol. I • Issue 01</span>
+            <span>Vol. I • Issue 02</span>
           </div>
         </div>
 

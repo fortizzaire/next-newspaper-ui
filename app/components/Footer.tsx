@@ -11,7 +11,7 @@ export default function Footer() {
     <motion.footer initial={{ y: 60, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.8, ease: "easeOut" }} viewport={{ once: true }} className="relative bg-[#f4efe2] mt-15 pt-5 pb-12 w-full overflow-hidden">
       <div className="max-w-5xl mx-auto px-6">
         {/* Top text */}
-        <p className="font-bold leading-relaxed mb-3">
+        <p className="italic text-md leading-relaxed mb-3">
           If you are interested in collaborating with me, hit me up at{" "}
           <a href="mailto:nindyarayhan@gmail.com" className="font-bold underline hover:opacity-70">
             nindyarayhan@gmail.com

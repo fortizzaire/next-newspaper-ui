@@ -1,10 +1,12 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { abril } from "@/app/fonts";
 import { motion } from "framer-motion";
 import { Variants } from "framer-motion";
-import { projects } from "@/app/components/data/projects";
+import { projects } from "@/app/data/projects/index";
+import { ArrowUpRight } from "lucide-react";
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -65,18 +67,18 @@ export default function ProjectsSection() {
         <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-gray-400"></div>
 
         {projects.map((p, i) => (
-          <Link key={i} href={p.href} className="block group">
+          <Link key={i} href={`/projects/${p.slug}`} prefetch className="block group">
             {/* Card */}
             <motion.div variants={card} className="flex flex-col space-y-3 pb-2">
               <div className="w-full h-40 md:h-44 bg-gray-200 overflow-hidden border border-[#b8b1a4] shadow-[0_0_1px_0_rgba(0,0,0,0.25)]">
                 <Image src={p.img} alt={p.title} width={500} height={300} className="newsprint-soft object-cover w-full h-full p-[1px] group-hover:scale-[1.01] transition-all duration-300" />
               </div>
 
-              <motion.div variants={fadeUp} className="relative flex items-center gap-3 text-[11px] tracking-[0.18em] uppercase text-gray-700 font-serif mt-2 mb-1">
+              {/* <motion.div variants={fadeUp} className="relative flex items-center gap-3 text-[11px] tracking-[0.18em] uppercase text-gray-700 font-serif mt-2 mb-1">
                 <div className="h-[1px] flex-1 bg-gray-400 opacity-60" />
                 <span className="px-2 italic font-normal">Featured Project • {p.cat}</span>
                 <div className="h-[1px] flex-1 bg-gray-400 opacity-60" />
-              </motion.div>
+              </motion.div> */}
 
               <motion.h3 variants={fadeUp} className="font-serif font-bold text-[1.22rem] leading-[1.15] cutout-headline pt-3 pb-2">
                 {p.title.split("").map((char, i) => (
@@ -97,7 +99,26 @@ export default function ProjectsSection() {
         ))}
       </motion.div>
 
-      <div className="mt-20">
+      <motion.div variants={fadeUp} className="pt-8">
+        <motion.div variants={fadeUp} className="relative flex items-center gap-3 text-[11px] tracking-[0.18em] uppercase text-gray-700 font-serif mt-2 mb-12">
+          <div className="h-[1px] flex-1 bg-gray-400 opacity-60" />
+          <span className="px-2 italic font-normal">Maximum limit index</span>
+          <div className="h-[1px] flex-1 bg-gray-400 opacity-60" />
+        </motion.div>
+
+        <p className="uppercase tracking-widest text-xs text-gray-600 mb-2">Archive — Vol. I</p>
+
+        <h3 className={`${abril.className} text-2xl md:text-4xl leading-tight mb-3`}>More Work & Experiments</h3>
+
+        <p className="italic text-md mb-6">Browse the full archive of case studies, prototypes, and digital experiments.</p>
+
+        <Link href="/projects" className="inline-flex items-center gap-2 text-xs uppercase tracking-widest border-b border-gray-700 pb-1 hover:opacity-60 transition-all">
+          Enter the Archive
+          <ArrowUpRight size={15} strokeWidth={1.6} className="translate-y-[1px]"></ArrowUpRight>
+        </Link>
+      </motion.div>
+
+      <div className="mt-16">
         <div className="border-t border-gray-400" />
 
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between mt-3 gap-3">
