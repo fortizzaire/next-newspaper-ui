@@ -35,7 +35,7 @@ export default async function Page({ params }: Props) {
         {/* Col 1: Description */}
         <div className="space-y-10 col-span-2">
           <h2 className="font-serif text-2xl mb-2">Summary</h2>
-          <p className="text-md text-justify leading-relaxed mb-10">{project.summary}</p>
+          <p className="text-sm text-justify leading-relaxed mb-10">{project.summary}</p>
 
           {project.body.map((block: any, i: number) => {
             if (block.type === "heading")
@@ -46,7 +46,7 @@ export default async function Page({ params }: Props) {
               );
             if (block.type === "paragraph")
               return (
-                <p key={i} className="mb-4 leading-relaxed text-justify">
+                <p key={i} className="mb-4 leading-relaxed text-justify text-sm">
                   {block.content}
                 </p>
               );
@@ -59,7 +59,7 @@ export default async function Page({ params }: Props) {
           {project.body.map((block: any, i: number) => {
             if (block.type === "list")
               return (
-                <ul key={i} className="list-disc pl-6 mb-4 text-md">
+                <ul key={i} className="list-disc pl-6 mb-4 text-sm">
                   {block.items.map((item: string, j: number) => (
                     <li key={j} className="mb-1">
                       {item}
