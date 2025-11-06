@@ -1,10 +1,11 @@
 import siska from "@/app/data/projects/siska-hayati";
+import monash from "@/app/data/projects/monash-uni";
 
 export const projects = [
   {
     slug: "siska-hayati",
     title: "Projek Paling Spesial",
-    year: "2036",
+    year: "2024",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint pariatur laudantium similique nobis magnam non maiores ab voluptas est adipisci voluptatibus nam eum corporis temporibus modi natus quaerat molestias quos nostrum aliquid a quia, odit enim. Corporis quidem soluta earum est, animi delectus eveniet, voluptate architecto id dicta facilis obcaecati. Facilis numquam tempore animi iure nulla laudantium modi pariatur architecto.",
     cat: "Fullstack Web",
     img: "/images/nytimes.jpg",
@@ -20,7 +21,7 @@ export const projects = [
   {
     slug: "monash-uni",
     title: "Monash University",
-    year: "2036",
+    year: "2026",
     desc: "The universe has told me that I'll be here in July 2026, pursuing master with LPDP scholarship and student accommodation stipend. Oh yes, I'll gracefully accept every part of the story that god has written on me.",
     cat: "Manifesto",
     img: "/images/monash.jpg",
@@ -53,4 +54,5 @@ export const projects = [
 
 export const projectMap: Record<string, any> = {
   [siska.slug]: siska,
+  [monash.slug]: monash,
 };

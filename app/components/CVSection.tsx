@@ -1,6 +1,5 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
+
 import { abril } from "@/app/fonts";
 import { delay, motion } from "framer-motion";
 import { Variants } from "framer-motion";

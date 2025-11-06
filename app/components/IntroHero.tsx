@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { abril } from "@/app/fonts";
 import { delay, motion } from "framer-motion";
@@ -133,16 +134,18 @@ export default function IntroSection() {
         {/* Bio */}
         <div className="w-full md:w-2/3 text-sm text-justify md:text-[15px] leading-relaxed text-gray-900">
           <motion.p variants={item} className="mb-4">
-            <span className="dropcap">R</span>ecent Computer Science graduate with strong interests in Front-end Web, Mobile, and UI/UX Design. I also design posters, social media, and stuff using Adobe Creative. Throughout my study at
-            Universitas Islam Indonesia, I adept to collaborate with interdisciplinary teams to build and participate in IT and non-IT initiatives which impact local communities.
+            <span className="dropcap">R</span>ecent Computer Science graduate with a deep passion for Front-end Development, UI/UX Design, IoT integration, and AI utilization in systems. I also design posters, social media visuals, and
+            other creative materials. Throughout my study at university, I learned to collaborate across discipline which aims to build initiatives that merge technology with real community impact.
           </motion.p>
 
           <motion.p variants={item} className="mb-4">
-            I am currently exploring the intersection of IT and real-world applications, particularly in areas such as IoT, deep learning, and AI. I am seeking opportunities to collaborate on developing IoT and AI integrated software to map
-            green spaces in urban areas. The goal is to enhance urban green landscapes by monitoring air quality and forecasting effective greening strategies to help combat air pollution.
+            I design and build apps, turning small ideas into tangible solutions, and MVPs into real problem-solving systems. That pursuit of function and form is what I long for. If you share the same spirit, I'll be here to scaffold your
+            aspiration.
           </motion.p>
 
-          <motion.p variants={item}>In my spare time, I enjoy playing games, watching movies, and exercising at the gym.</motion.p>
+          <motion.p variants={item}>
+            In my spare time, I enjoy playing games, watching movies, listening to indie musics, and exercising at the gym. Hear me out, you need to have hobbies to nurture your aspiration and cultivate your creativity. Cheers, fellas!
+          </motion.p>
         </div>
       </motion.div>
 
