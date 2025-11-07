@@ -19,12 +19,8 @@ const listContainer: Variants = {
 };
 
 const listItem: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
+  hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
+  show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.6, ease: "easeOut" } },
 };
 
 export default function ProjectsPage() {
@@ -42,7 +38,10 @@ export default function ProjectsPage() {
         Selected Work & Experiments
       </motion.h1>
 
-      <div className="border-t border-gray-400 mb-10" />
+      <div className="mb-10">
+        <div className="border-t border-gray-400 mb-2" />
+        {/* <div className="h-4 w-full bg-[#efe4c8]" /> */}
+      </div>
 
       {/* Project list with stagger animation */}
       <motion.div variants={listContainer} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className="flex flex-col divide-y divide-gray-300">
@@ -50,7 +49,7 @@ export default function ProjectsPage() {
           <motion.div key={i} variants={listItem} className="py-10">
             <Link href={`/projects/${p.slug}`} className="group flex flex-col md:flex-row items-start gap-6">
               {/* Image */}
-              <div className="w-full md:w-1/3 bg-gray-200 overflow-hidden border border-[#b8b1a4] shadow-[0_0_1px_0_rgba(0,0,0,0.25)]">
+              <div className="w-full md:w-1/3 bg-gray-200 overflow-hidden border border-[#b8b1a4] mix-blend-multiply opacity-95">
                 <Image src={p.img} alt={p.title} width={400} height={300} className="newsprint-soft object-cover w-full h-48 md:h-40 transition-transform duration-300 group-hover:scale-[1.03]" />
               </div>
 
@@ -69,6 +68,7 @@ export default function ProjectsPage() {
                 {/* <div className="border-t border-gray-300 w-full my-1" /> */}
 
                 <p className="text-sm text-gray-800 leading-relaxed text-justify">{p.desc}</p>
+                <p className="italic text-sm text-gray-500 mt-4 text-center">Read the full case study</p>
               </div>
             </Link>
           </motion.div>
@@ -76,11 +76,17 @@ export default function ProjectsPage() {
       </motion.div>
 
       {/* Footer border + exit link */}
-      <div className="border-t border-gray-400 mt-20" />
-      <Link href="/" className="inline-flex items-center gap-2 text-sm uppercase tracking-widest mt-8 hover:opacity-60 transition-all">
-        <ArrowLeft size={15} strokeWidth={1.6} />
-        Exit Archive
-      </Link>
+      <div className="mt-20">
+        <div className="h-4 w-full bg-[#e1ddd3] opacity-80" />
+        <div className="border-t border-gray-400 mt-2" />
+      </div>
+      <div className="flex justify-between mt-5">
+        <Link href="/" className="order-first inline-flex items-center gap-2 text-sm uppercase tracking-widest hover:opacity-60 transition-all">
+          <ArrowLeft size={15} strokeWidth={1.6} />
+          Exit Archive
+        </Link>
+        <span className="order-last uppercase tracking-widest text-sm">Vol. I</span>
+      </div>
     </section>
   );
 }

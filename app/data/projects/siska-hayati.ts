@@ -11,7 +11,7 @@ const siska = {
     {
       type: "paragraph",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod quos tempore consectetur ab rerum eveniet ipsam aspernatur architecto. Quas, vitae. Dolor dolores maiores numquam suscipit consectetur minima voluptas dicta esse aperiam sed nemo rem repellat voluptates eius necessitatibus veritatis delectus quo ullam consequuntur, porro non incidunt sunt beatae atque! Ad?",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. In dolor consequuntur fuga porro doloremque, corrupti repellendus reiciendis amet, ex, alias ab possimus fugit illum. Ipsa aliquid cum cumque mollitia consequatur officia illo eaque. Voluptas aspernatur soluta molestias incidunt quasi quos, libero iure eligendi quaerat sit repudiandae blanditiis. Pariatur sequi, odit ipsum velit accusantium porro blanditiis fugit recusandae similique quisquam. Ipsa, provident accusamus incidunt non nisi, sed placeat veritatis aut sunt ipsum amet. Eveniet, sit laudantium quas dolores ipsa fugiat? Voluptates, libero. Magni nisi quidem quasi ducimus aspernatur molestias? Et, totam. Quidem nihil quae neque, ea fugit culpa dicta asperiores amet!",
     },
     { type: "list", items: ["Geospatial dashboard", "GPS tagging", "Unique tree QR Code identity", "Tree mortaility status"] },
   ],
