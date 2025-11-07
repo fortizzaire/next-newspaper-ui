@@ -54,12 +54,12 @@ const ruleLine: Variants = {
 export default function ProjectsSection() {
   return (
     <section className="max-w-5xl mx-auto px-6 pt-20 md:pt-15">
-      <motion.h2 variants={sectionTitle} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} className={`${abril.className} bg-[#efe4c8] text-center text-4xl md:text-5xl tracking-tight p-7 mb-3`}>
+      <motion.h2 variants={sectionTitle} initial="hidden" whileInView="show" className={`${abril.className} bg-[#efe4c8] text-center text-4xl md:text-5xl tracking-tight p-7 mb-3`}>
         PROJECT HEADLINE
       </motion.h2>
 
       {/* Bottom Border */}
-      <motion.div variants={ruleLine} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} className="border-t border-gray-400 origin-left" />
+      <motion.div variants={ruleLine} initial="hidden" whileInView="show" className="border-t border-gray-400 origin-left" />
 
       {/* Grid wrapper */}
       <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className="grid grid-cols-1 md:grid-cols-2 gap-10 relative mt-10">
