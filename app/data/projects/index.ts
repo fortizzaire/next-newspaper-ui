@@ -1,7 +1,16 @@
 import siska from "@/app/data/projects/siska-hayati";
 import monash from "@/app/data/projects/monash-uni";
+import kibou from "@/app/data/projects/kibou-no-hikari";
 
 export const projects = [
+  {
+    slug: "kibou-no-hikari",
+    title: "Kibou No Hikari",
+    year: "2025",
+    desc: "An AI-powered CV Builder that helps users create or optimize CVs based on their career goals.",
+    cat: "Fullstack Web",
+    img: "/images/kibounohikari.png",
+  },
   {
     slug: "siska-hayati",
     title: "Projek Paling Spesial",
@@ -55,4 +64,5 @@ export const projects = [
 export const projectMap: Record<string, any> = {
   [siska.slug]: siska,
   [monash.slug]: monash,
+  [kibou.slug]: kibou,
 };

@@ -50,6 +50,26 @@ export default async function Page({ params }: Props) {
                   {block.content}
                 </p>
               );
+            if (block.type === "list-mvp")
+              return (
+                <ul key={i} className="list-disc pl-6 mb-4 text-sm">
+                  {block.items.map((item: string, j: number) => (
+                    <li key={j} className="mb-1">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              );
+            if (block.type === "list-cost-mvp")
+              return (
+                <ul key={i} className="list-disc pl-6 mb-4 text-sm">
+                  {block.items.map((item: string, j: number) => (
+                    <li key={j} className="mb-1">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              );
             return null;
           })}
         </div>
