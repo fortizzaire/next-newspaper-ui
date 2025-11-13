@@ -74,7 +74,8 @@ export default async function Page({ params }: Props) {
           })}
         </div>
         {/* Col 2: Features and Links */}
-        <div className="space-y-10 col-span-1">
+        <div className="space-y-10 col-span-2 md:col-span-1">
+          {/* Key Features */}
           <h2 className="font-serif text-2xl mb-2">Key Features</h2>
           {project.body.map((block: any, i: number) => {
             if (block.type === "list")
@@ -90,6 +91,23 @@ export default async function Page({ params }: Props) {
             return null;
           })}
 
+          {/* Tech Stack */}
+          <h2 className="font-serif text-2xl mt-10 mb-2">Tech Stack</h2>
+          {project.body.map((block: any, i: number) => {
+            if (block.type === "tech-stack")
+              return (
+                <ul key={i} className="list-disc pl-6 mb-4 text-sm">
+                  {block.items.map((item: string, j: number) => (
+                    <li key={j} className="mb-1">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              );
+            return null;
+          })}
+
+          {/* Repository Link */}
           <a href={project.links.code} className="inline-flex items-center gap-2 mt-10 border-b border-gray-800 pb-1 text-xs uppercase tracking-wider">
             Repository
             <ArrowUpRight size={15} strokeWidth={1.6} className="translate-y-[1px]"></ArrowUpRight>

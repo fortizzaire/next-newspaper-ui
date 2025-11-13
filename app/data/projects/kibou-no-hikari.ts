@@ -10,13 +10,13 @@ const kibou = {
     {
       type: "paragraph",
       content:
-        "I've seen lots of fellows writing irrelevant CV with the application requirements, either in stating their prior experience, or in expressing their intention, let alone writing it in professional CV layout. Moreover, they write one CV for numerous application. Because I believe, every job market in every industry and country has its own unique requirements, whether in how they expressing goals towards their career, stating their prior experiences and skills, and writing professionally.",
+        "I've seen lots of fellows writing misrelevant CV with the application requirements, either in stating their prior experience, or in expressing their intention, let alone writing it in professional CV layout. Moreover, writing one CV for numerous applications could lead to sudden rejection because of misaligned with the respective requirements. Because I believe, every job market in every industry in several countries has its own unique requirements, whether in how they expressing goals towards their career, stating their prior experiences and skills, or writing it professionally.",
     },
     { type: "heading", content: "MVP" },
     {
       type: "paragraph",
       content:
-        "Regarding this problem, I am thrilled to cultivate this idea into realization, by creating tools to build an extra-ordinary CV Builder with AI assistance, with a Japanese-style UI touch so you could be motivated to beautify your CV as beautiful as Japan, hehe. Here's the MVP (Minimum Viable Product) for this idea:",
+        "Regarding this problem, I am thrilled to cultivate this idea into realization, by creating tools to build an extra-ordinary CV Builder with AI assistance called Kibou No Hikari (Light of Hope). With Japanese-style UI touch, I believe you could be motivated to beautify your CV as beautiful as Japan, hehe. Here's the MVP (Minimum Viable Product) for this idea:",
     },
     {
       type: "list-mvp",
@@ -45,13 +45,17 @@ const kibou = {
       type: "paragraph",
       content: "Total MVP budget: $5-$25 (Rp75k-Rp400k).",
     },
-    { type: "heading", content: "What's Next?" },
+    { type: "heading", content: "What's Next? (Future Tools)" },
     {
       type: "paragraph",
       content:
         "Essay builder for University Admissions (USA, Europe, SEA, etc.), scholarships (LPDP, AAS, Fulbright, Erasmus, DAAD, MEXT, etc.), and Fellowships (YSEALI, MUN, etc). Peer review by professionals based on user's career determination.",
     },
     { type: "list", items: ["CV Builder with AI Assistant", "Optimized with your country and industry goal's CV", "Transform your existing CV into optimized one"] },
+    {
+      type: "tech-stack",
+      items: ["Next.js", "Tailwind CSS", "Supabase", "GPT-4o-Turbo"],
+    },
   ],
   links: {
     code: "https://www.figma.com/proto/xl1caXIJB4LSSZBxCDMCSq/UI-Designer-team-library?page-id=2316%3A2&node-id=2317-4&viewport=599%2C213%2C0.36&t=JRrMKtplKZWQyakq-1&scaling=contain&content-scaling=fixed&starting-point-node-id=2317%3A4",

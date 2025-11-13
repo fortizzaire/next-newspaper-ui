@@ -66,7 +66,7 @@ export default function ProjectsSection() {
         {/* Middle Divider */}
         <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-gray-400"></div>
 
-        {projects.map((p, i) => (
+        {projects.slice(0, 6).map((p, i) => (
           <Link key={i} href={`/projects/${p.slug}`} prefetch className="block group">
             {/* Card */}
             <motion.div variants={card} className="flex flex-col space-y-3 pb-2">
@@ -106,16 +106,22 @@ export default function ProjectsSection() {
           <div className="h-[1px] flex-1 bg-gray-400 opacity-60" />
         </motion.div>
 
-        <p className="uppercase tracking-widest text-xs text-gray-600 mb-2">Archive — Vol. I</p>
-
-        <h3 className={`${abril.className} text-2xl md:text-4xl leading-tight mb-3`}>More Work & Experiments</h3>
-
-        <p className="italic text-md mb-6">Browse the full archive of case studies, prototypes, and digital experiments.</p>
-
-        <Link href="/projects" className="inline-flex items-center gap-2 text-xs uppercase tracking-widest border-b border-gray-700 pb-1 hover:opacity-60 transition-all">
-          Enter the Archive
-          <ArrowUpRight size={15} strokeWidth={1.6} className="translate-y-[1px]"></ArrowUpRight>
-        </Link>
+        <div className="grid grid-cols-3 md:grid-cols-4">
+          {/* Left Col */}
+          <div className="col-span-2 md:col-span-3">
+            {/* <p className="uppercase tracking-widest text-xs text-gray-600 mb-2">Archive — Vol. I</p> */}
+            <h3 className="ink-press italic uppercase text-3xl md:text-4xl leading-tight mb-3">More Work & Experiments</h3>
+            <p className="italic text-sm mb-6">Browse the full archive of case studies, prototypes, and digital experiments.</p>
+            <Link href="/projects" className="inline-flex items-center gap-2 text-xs uppercase tracking-widest border-b border-gray-700 pb-1 hover:opacity-60 transition-all">
+              Enter the Archive
+              <ArrowUpRight size={15} strokeWidth={1.6} className="translate-y-[1px]"></ArrowUpRight>
+            </Link>
+          </div>
+          {/* Right col (image) */}
+          <div className="col-span-1 place-items-center">
+            <Image src="/vintage-person.png" alt="euweuh" height={150} width={150} className="opacity-80"></Image>
+          </div>
+        </div>
       </motion.div>
 
       <div className="mt-16">
