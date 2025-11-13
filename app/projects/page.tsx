@@ -47,7 +47,7 @@ export default function ProjectsPage() {
       <motion.div variants={listContainer} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className="flex flex-col divide-y divide-gray-300">
         {projects.map((p, i) => (
           <motion.div key={i} variants={listItem} className="py-10">
-            <Link href={`/projects/${p.slug}`} className="group flex flex-col md:flex-row items-start gap-6">
+            <Link href={`/projects/${p.slug}`} className="hover-lift group flex flex-col md:flex-row items-start gap-6">
               {/* Image */}
               <div className="w-full md:w-1/3 bg-gray-200 overflow-hidden border border-[#b8b1a4] mix-blend-multiply opacity-95">
                 <Image src={p.img} alt={p.title} width={400} height={300} className="newsprint-soft object-cover w-full h-48 md:h-40 transition-transform duration-300 group-hover:scale-[1.03]" />

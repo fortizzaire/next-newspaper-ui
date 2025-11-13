@@ -62,23 +62,17 @@ export default function ProjectsSection() {
       <motion.div variants={ruleLine} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} className="border-t border-gray-400 origin-left" />
 
       {/* Grid wrapper */}
-      <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className="grid grid-cols-1 md:grid-cols-2 gap-10 relative mt-10">
+      <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className="columns-1 md:columns-2 gap-8 space-y-8 mt-10 relative">
         {/* Middle Divider */}
         <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-gray-400"></div>
 
         {projects.slice(0, 6).map((p, i) => (
-          <Link key={i} href={`/projects/${p.slug}`} prefetch className="block group">
+          <Link key={i} href={`/projects/${p.slug}`} prefetch className="break-inside-avoid-column block group hover-lift">
             {/* Card */}
             <motion.div variants={card} className="flex flex-col space-y-3 pb-2">
               <div className="w-full h-40 md:h-44 bg-gray-200 overflow-hidden border border-[#b8b1a4] shadow-[0_0_1px_0_rgba(0,0,0,0.25)]">
                 <Image src={p.img} alt={p.title} width={500} height={300} className="newsprint-soft object-cover w-full h-full p-[1px] group-hover:scale-[1.01] transition-all duration-300" />
               </div>
-
-              {/* <motion.div variants={fadeUp} className="relative flex items-center gap-3 text-[11px] tracking-[0.18em] uppercase text-gray-700 font-serif mt-2 mb-1">
-                <div className="h-[1px] flex-1 bg-gray-400 opacity-60" />
-                <span className="px-2 italic font-normal">Featured Project • {p.cat}</span>
-                <div className="h-[1px] flex-1 bg-gray-400 opacity-60" />
-              </motion.div> */}
 
               <motion.h3 variants={fadeUp} className="font-serif font-bold text-[1.22rem] leading-[1.15] cutout-headline pt-3 pb-2">
                 {p.title.split("").map((char, i) => (
@@ -91,9 +85,6 @@ export default function ProjectsSection() {
               <motion.p variants={fadeUp} className="text-sm text-gray-800 leading-relaxed text-justify">
                 {p.desc}
               </motion.p>
-
-              {/* underline */}
-              {/* <div className="border-b border-black w-full mt-2"></div> */}
             </motion.div>
           </Link>
         ))}
