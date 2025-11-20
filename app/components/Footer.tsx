@@ -30,7 +30,7 @@ export default function Footer() {
             { name: "Spotify", url: "https://open.spotify.com/user/justforhappygaming?si=84ad734ff65b4fd1" },
           ].map((s, i) => (
             <Link key={i} href={s.url} className="hover:underline inline-flex items-center gap-1 font-semibold">
-              {s.name} <ArrowUpRight size={12} strokeWidth={1.6} className="translate-y-[1px]" />
+              {s.name} <ArrowUpRight size={12} strokeWidth={1.6} className="translate-y-px" />
             </Link>
           ))}
         </div>

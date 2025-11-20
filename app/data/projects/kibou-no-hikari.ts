@@ -6,20 +6,20 @@ const kibou = {
   summary: "An AI-powered CV Builder that helps users create or optimize CVs based on their career goals.",
   heroImg: "/images/kibounohikari.png",
   body: [
-    { type: "heading", content: "Background" },
+    { type: "heading-left-col", content: "Background" },
     {
       type: "paragraph",
       content:
         "I've seen lots of fellows writing misrelevant CV with the application requirements, either in stating their prior experience, or in expressing their intention, let alone writing it in professional CV layout. Moreover, writing one CV for numerous applications could lead to sudden rejection because of misaligned with the respective requirements. Because I believe, every job market in every industry in several countries has its own unique requirements, whether in how they expressing goals towards their career, stating their prior experiences and skills, or writing it professionally.",
     },
-    { type: "heading", content: "MVP" },
+    { type: "heading-left-col", content: "MVP" },
     {
       type: "paragraph",
       content:
         "Regarding this problem, I am thrilled to cultivate this idea into realization, by creating tools to build an extra-ordinary CV Builder with AI assistance called Kibou No Hikari (Light of Hope). With Japanese-style UI touch, I believe you could be motivated to beautify your CV as beautiful as Japan, hehe. Here's the MVP (Minimum Viable Product) for this idea:",
     },
     {
-      type: "list-mvp",
+      type: "list-left-col",
       items: [
         "Landing Page (Presentation of the product)",
         "CV Builder Page with goal selection page (e.g Tech in Singapore, Hospitality in Dubai)",
@@ -29,9 +29,9 @@ const kibou = {
         "PDF download",
       ],
     },
-    { type: "heading", content: "Cost for MVP Setup" },
+    { type: "heading-left-col", content: "Cost for MVP Setup" },
     {
-      type: "list-cost-mvp",
+      type: "list-left-col",
       items: [
         "Frontend & Hosting (Next.js + Vercel): FREE",
         "Database (Supabase): FREE",
@@ -45,15 +45,20 @@ const kibou = {
       type: "paragraph",
       content: "Total MVP budget: $5-$25 (Rp75k-Rp400k).",
     },
-    { type: "heading", content: "What's Next? (Future Tools)" },
+    { type: "heading-left-col", content: "What's Next? (Future Tools)" },
     {
       type: "paragraph",
       content:
         "Essay builder for University Admissions (USA, Europe, SEA, etc.), scholarships (LPDP, AAS, Fulbright, Erasmus, DAAD, MEXT, etc.), and Fellowships (YSEALI, MUN, etc). Peer review by professionals based on user's career determination.",
     },
-    { type: "list", items: ["CV Builder with AI Assistant", "Optimized with your country and industry goal's CV", "Transform your existing CV into optimized one"] },
+    { type: "heading-right-col", content: "Features" },
     {
-      type: "tech-stack",
+      type: "list-right-col",
+      items: ["CV Builder with AI Assistant", "Optimized with your country and industry goal's CV", "Transform your existing CV into optimized one"],
+    },
+    { type: "heading-right-col", content: "Tech Stack" },
+    {
+      type: "list-right-col",
       items: ["Next.js", "Tailwind CSS", "Supabase", "GPT-4o-Turbo"],
     },
   ],

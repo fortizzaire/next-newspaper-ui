@@ -31,14 +31,14 @@ export default async function Page({ params }: Props) {
       {/* Grid Wrapper */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative pt-2">
         {/* Middle Divider */}
-        <div className="hidden md:block absolute left-2/3 top-0 bottom-0 w-[1px] bg-gray-400"></div>
+        <div className="hidden md:block absolute left-2/3 top-0 bottom-0 w-px bg-gray-400"></div>
         {/* Col 1: Description */}
         <div className="space-y-10 col-span-2">
           <h2 className="font-serif text-2xl mb-2">Summary</h2>
           <p className="text-sm text-justify leading-relaxed mb-10">{project.summary}</p>
 
           {project.body.map((block: any, i: number) => {
-            if (block.type === "heading")
+            if (block.type === "heading-left-col")
               return (
                 <h2 key={i} className="font-serif text-2xl mt-10 mb-2">
                   {block.content}
@@ -50,17 +50,7 @@ export default async function Page({ params }: Props) {
                   {block.content}
                 </p>
               );
-            if (block.type === "list-mvp")
-              return (
-                <ul key={i} className="list-disc pl-6 mb-4 text-sm">
-                  {block.items.map((item: string, j: number) => (
-                    <li key={j} className="mb-1">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              );
-            if (block.type === "list-cost-mvp")
+            if (block.type === "list-left-col")
               return (
                 <ul key={i} className="list-disc pl-6 mb-4 text-sm">
                   {block.items.map((item: string, j: number) => (
@@ -75,28 +65,16 @@ export default async function Page({ params }: Props) {
         </div>
         {/* Col 2: Features and Links */}
         <div className="space-y-10 col-span-2 md:col-span-1">
-          {/* Key Features */}
-          <h2 className="font-serif text-2xl mb-2">Key Features</h2>
           {project.body.map((block: any, i: number) => {
-            if (block.type === "list")
+            if (block.type === "heading-right-col")
               return (
-                <ul key={i} className="list-disc pl-6 mb-4 text-sm">
-                  {block.items.map((item: string, j: number) => (
-                    <li key={j} className="mb-1">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <h2 key={i} className="font-serif text-2xl mb-2">
+                  {block.content}
+                </h2>
               );
-            return null;
-          })}
-
-          {/* Tech Stack */}
-          <h2 className="font-serif text-2xl mt-10 mb-2">Tech Stack</h2>
-          {project.body.map((block: any, i: number) => {
-            if (block.type === "tech-stack")
+            if (block.type === "list-right-col")
               return (
-                <ul key={i} className="list-disc pl-6 mb-4 text-sm">
+                <ul key={i} className="list-disc pl-6 mb-10 text-sm">
                   {block.items.map((item: string, j: number) => (
                     <li key={j} className="mb-1">
                       {item}
@@ -110,7 +88,7 @@ export default async function Page({ params }: Props) {
           {/* Repository Link */}
           <a href={project.links.code} className="inline-flex items-center gap-2 mt-10 border-b border-gray-800 pb-1 text-xs uppercase tracking-wider">
             Repository
-            <ArrowUpRight size={15} strokeWidth={1.6} className="translate-y-[1px]"></ArrowUpRight>
+            <ArrowUpRight size={15} strokeWidth={1.6} className="translate-y-px"></ArrowUpRight>
           </a>
         </div>
       </div>

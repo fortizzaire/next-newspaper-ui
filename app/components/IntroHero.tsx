@@ -155,7 +155,7 @@ export default function IntroSection() {
 
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between mt-3 gap-3">
           {/* Bars */}
-          <div className="flex gap-[1px] w-full md:w-auto">
+          <div className="flex gap-px w-full md:w-auto">
             <motion.div variants={barItem} className="h-6 flex-1 md:w-40 bg-[#EB6161]" />
             <motion.div variants={barItem} className="h-6 flex-1 md:w-40 bg-[#EF7D7D]" />
             <motion.div variants={barItem} className="h-6 flex-1 md:w-40 bg-[#F39F9F]" />

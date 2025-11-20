@@ -22,7 +22,7 @@ export default function Header() {
         <div className="border-b border-black-300" />
 
         {/* Row 2: Subtitle + Links */}
-        <div className="md:flex items-center text-center justify-between py-[6px] md:py-1 px-6 text-xs md:text-sm font-semibold">
+        <div className="md:flex items-center text-center justify-between py-1.5 md:py-1 px-6 text-xs md:text-sm font-semibold">
           <span>Information Technology, Web Developer, Designer</span>
 
           <div className="hidden md:flex items-center">

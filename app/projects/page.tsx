@@ -58,11 +58,11 @@ export default function ProjectsPage() {
                 <h3 className="font-serif font-bold text-center text-lg md:text-xl leading-tight">{p.title}</h3>
 
                 <div className="relative flex items-center gap-3 text-[11px] tracking-[0.18em] uppercase text-gray-700 font-serif py-1">
-                  <div className="h-[1px] flex-1 bg-gray-400 opacity-60" />
+                  <div className="h-px flex-1 bg-gray-400 opacity-60" />
                   <span className="px-2 italic font-normal">
                     Circa {p.year} • {p.cat}
                   </span>
-                  <div className="h-[1px] flex-1 bg-gray-400 opacity-60" />
+                  <div className="h-px flex-1 bg-gray-400 opacity-60" />
                 </div>
 
                 {/* <div className="border-t border-gray-300 w-full my-1" /> */}
