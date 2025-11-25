@@ -62,9 +62,9 @@ export default function ProjectsSection() {
       <motion.div variants={ruleLine} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} className="border-t border-gray-400 origin-left" />
 
       {/* Grid wrapper */}
-      <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className="columns-1 md:columns-2 gap-8 space-y-8 mt-10 relative">
+      <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className="columns-1 sm:columns-2 gap-8 space-y-8 mt-10 relative">
         {/* Middle Divider */}
-        <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-400"></div>
+        <div className="hidden sm:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-400"></div>
 
         {projects.slice(0, 6).map((p, i) => (
           <Link key={i} href={`/projects/${p.slug}`} prefetch className="break-inside-avoid-column block group hover-lift">
@@ -101,7 +101,7 @@ export default function ProjectsSection() {
           {/* Left Col */}
           <div className="col-span-2 md:col-span-3">
             {/* <p className="uppercase tracking-widest text-xs text-gray-600 mb-2">Archive — Vol. I</p> */}
-            <h3 className="ink-press italic uppercase text-3xl md:text-4xl leading-tight mb-3">More Work & Experiments</h3>
+            <h3 className="ink-press italic uppercase text-3xl md:text-5xl leading-tight mb-3">More Work & Experiments</h3>
             <p className="italic text-sm mb-6">Browse the full archive of case studies, prototypes, and digital experiments.</p>
             <Link href="/projects" className="inline-flex items-center gap-2 text-xs uppercase tracking-widest border-b border-gray-700 pb-1 hover:opacity-60 transition-all">
               Enter the Archive

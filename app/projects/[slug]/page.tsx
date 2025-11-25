@@ -26,7 +26,7 @@ export default async function Page({ params }: Props) {
       <p className="text-gray-700 mb-8">
         {project.year} • {project.role}
       </p>
-      <img src={project.heroImg} alt={project.title} className="w-full mb-8" />
+      <img src={project.heroImg} alt={project.title} className="w-full mb-8 shadow-md" />
 
       {/* Grid Wrapper */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative pt-2">

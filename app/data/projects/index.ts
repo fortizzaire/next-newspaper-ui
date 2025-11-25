@@ -1,6 +1,7 @@
 import siska from "@/app/data/projects/siska-hayati";
 import monash from "@/app/data/projects/monash-uni";
 import kibou from "@/app/data/projects/kibou-no-hikari";
+import centragov from "./centra-gov";
 
 export const projects = [
   {
@@ -13,19 +14,19 @@ export const projects = [
   },
   {
     slug: "siska-hayati",
-    title: "Projek Paling Spesial",
+    title: "Siska Hayati",
     year: "2024",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint pariatur laudantium similique nobis magnam non maiores ab voluptas est adipisci voluptatibus nam eum corporis temporibus modi natus quaerat molestias quos nostrum aliquid a quia, odit enim. Corporis quidem soluta earum est, animi delectus eveniet, voluptate architecto id dicta facilis obcaecati. Facilis numquam tempore animi iure nulla laudantium modi pariatur architecto.",
+    desc: "Accommodating trees and green spaces data in town as a part of the government's digitalization program. Siska Hayati is not an ordinary CRUD project, is an educational platform for early-student to recognize tree's type and details, by scanning the unique QR code respectively.",
     cat: "Fullstack Web",
-    img: "/images/nytimes.jpg",
+    img: "/images/siska.png",
   },
   {
-    slug: "oh-dude",
-    title: "Ohh.. Dude!",
-    year: "2036",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint pariatur laudantium similique nobis magnam non maiores ab voluptas est adipisci voluptatibus nam eum corporis temporibus modi natus quaerat molestias quos nostrum aliquid a quia, odit enim. Corporis quidem soluta earum est, animi delectus eveniet, voluptate architecto id dicta facilis obcaecati. Facilis numquam tempore animi iure nulla laudantium modi pariatur architecto.",
-    cat: "Crime Scene",
-    img: "/images/dude.jpg",
+    slug: "centra-gov",
+    title: "CentraGOV",
+    year: "2023",
+    desc: "A self-initiated UI design for accommodate all the government services in a single platform. Inspired by the Estonian e-government concept where they digitalized most of their services and bureaucracy.",
+    cat: "UI Design",
+    img: "/images/centraGOV.png",
   },
   {
     slug: "monash-uni",
@@ -65,4 +66,5 @@ export const projectMap: Record<string, any> = {
   [siska.slug]: siska,
   [monash.slug]: monash,
   [kibou.slug]: kibou,
+  [centragov.slug]: centragov,
 };

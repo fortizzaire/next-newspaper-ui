@@ -61,20 +61,29 @@ interface CVItemProps {
   org: string;
   year: string;
   desc: string;
+  lists?: string[];
 }
 
-const CVItem = ({ title, org, year, desc }: CVItemProps) => (
-  <motion.div variants={item} className="space-y-2">
-    <div className="flex justify-between items-start py-1">
-      <h4 className="font-serif font-bold text-lg leading-tight cutout-headline">{title}</h4>
-      <span className="italic text-sm text-gray-700">{year}</span>
+const CVItem = ({ title, org, year, desc, lists }: CVItemProps) => (
+  <motion.div variants={item}>
+    <div className="hover-lift space-y-3">
+      <div className="flex justify-between items-start pt-2">
+        <h4 className="font-serif font-bold text-md leading-tight cutout-headline">{title}</h4>
+        <span className="italic text-sm text-gray-700">{year}</span>
+      </div>
+
+      <p className="italic text-sm text-gray-700">{org}</p>
+
+      <p className="text-sm text-justify text-gray-900 leading-relaxed">{desc}</p>
+
+      {lists && lists.length > 0 && (
+        <ul className="list-disc pl-5 text-sm text-gray-900 space-y-1 mt-2 text-justify">
+          {lists.map((list, i) => (
+            <li key={i}>{list}</li>
+          ))}
+        </ul>
+      )}
     </div>
-
-    <p className="italic text-sm text-gray-700">{org}</p>
-
-    <p className="text-sm text-justify leading-relaxed">{desc}</p>
-
-    {/* <div className="border-b border-gray-300 pt-2"></div> */}
   </motion.div>
 );
 
@@ -119,17 +128,33 @@ export default function CVSection() {
           </motion.h3>
 
           <CVItem
-            title="Google Project Management Certificate"
-            org="Coursera"
-            year="2025"
-            desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta doloremque facilis at necessitatibus eum fugiat, dolorum sint architecto, enim, illo saepe fugit et cumque vitae eveniet deleniti ab ipsum! Explicabo?"
+            title="'Bank Air Kami v2' Research Member"
+            org="Universitas Islam Indonesia"
+            year="2023-2024"
+            desc="Led by Mr Ari Sujarwo, we aimed to improve the data workflows and system infrastructures by integrating cybersecurity frameworks and IoT technologies, which lacked by the 'VERSION-1' system. The project offered a solution to water scarcity in rural communities in Terban, Yogyakarta, by providing water quality information and consumptions. My role was to:"
+            lists={[
+              "Build a proposed framework for cybersecurity measures, I implemented the CIA (Confidentiality, Integrity, Availability) Framework to enhance system reliability and security, leveraging tools like Snort IDS and Hashing methods for the countermeasures.",
+              "As for data communication architecture, I utilized Node-RED for the MQTT workflows and management in IoT system.",
+              "Working with a cross-functional team (Electrical Engineer, Web Developer, Scrum Master) to build a robust and solid infrastructure",
+            ]}
           />
 
           <CVItem
-            title="Organization Management"
-            org="Universitas Islam Indonesia"
+            title="The 7th International Student Science Forum"
+            org="Ho Chi Minh City, Vietnam"
+            year="2023"
+            desc="By the mission of expanding horizon, cultural exchange, and knowledge sharing, we presented our paper with the title of 'Automatic Tap Water for the Clean Sanitation' in front of 100+ vietnamese audiences and 50+ shortlisted-peers across Southeast Asia countries."
+          />
+
+          <CVItem
+            title="Leader of Program Division"
+            org="Gatotkaca Unisi — Indonesia"
             year="2023–2024"
-            desc="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio perspiciatis molestiae quidem dolorem! Porro, rerum qui quaerat quam nostrum in."
+            desc="While the technical development of Gatotkaca's 2nd electric vehicle was going on, I supported the non-technical aspect by working with the Marketing and Public Relation crew to:"
+            lists={[
+              "Developed a company website and profile for Gatotkaca Unisi which enhanced a company branding with an increase of members up to 20 people and 2 main sponsors for the Electric Vehicle development.",
+              "Hired skilled division members in which increased the EV development with 10% less workflow.",
+            ]}
           />
         </motion.div>
       </motion.div>
@@ -140,7 +165,7 @@ export default function CVSection() {
 
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between mt-3 gap-3">
           {/* Bars */}
-          <div className="flex gap-[1px] w-full md:w-auto">
+          <div className="flex gap-px w-full md:w-auto">
             <div className="h-6 flex-1 md:w-40 bg-[#EB6161]" />
             <div className="h-6 flex-1 md:w-40 bg-[#EF7D7D]" />
             <div className="h-6 flex-1 md:w-40 bg-[#F39F9F]" />
